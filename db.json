@@ -1,0 +1,14 @@
+{
+  "articles": [
+    {
+      "id": "1",
+      "title": "Article One",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "2",
+      "title": "Article two",
+      "body": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    }
+  ]
+}
