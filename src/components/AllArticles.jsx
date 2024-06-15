@@ -1,14 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchAllArticles, getAllArticles } from "../reducers/articleReducer";
-import { useEffect } from "react";
+import { getAllArticles } from "../reducers/articleReducer";
 
 function AllArticles() {
   const articles = useSelector(getAllArticles);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchAllArticles());
-  }, []);
+
   return (
     <div>
       <h1>All articles</h1>

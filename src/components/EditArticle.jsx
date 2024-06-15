@@ -4,17 +4,20 @@ import { useNavigate, useParams } from "react-router-dom";
 import {
   deleteArticle,
   editArticle,
+  getAllArticles,
   getArticle,
 } from "../reducers/articleReducer";
 
 function EditArticle() {
   const { id } = useParams();
-  const article = useSelector(getArticle(id));
-  const [title, setTitle] = useState(() => article?.title || "");
-  const [body, setBody] = useState(() => article?.body || "");
+  const article = useSelector(getAllArticles).find(
+    (article) => article.id === id
+  );
+
+  const [title, setTitle] = useState(article?.title);
+  const [body, setBody] = useState(article?.body);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(editArticle({ id, title, body }));

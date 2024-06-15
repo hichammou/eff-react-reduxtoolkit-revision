@@ -72,6 +72,7 @@ const ArticleSlice = createSlice({
 export default ArticleSlice.reducer;
 
 export const getArticle = (id) => {
-  return (state) => state.articles.articles.find((ar) => ar.id == id);
+  return (state) =>
+    state.articles.articles.find((article) => article.id === id);
 };
 export const getAllArticles = (state) => state.articles.articles;
